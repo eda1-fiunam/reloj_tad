@@ -63,14 +63,14 @@ void Reloj_Incrementar( Reloj* this )
 {
 	++this->minutos;
 	if( this->minutos > 59 )
-   {
+    {
 		this->minutos = 0;
 
 		++this->horas;
 		if( this->horas > 23 )
-      { 
-         this->horas = 0; 
-      }
+        { 
+          this->horas = 0; 
+        }
 	}
 }
 
@@ -90,9 +90,11 @@ int main()
 	printf( "Reloj 'swatch' antes: " );
 	Reloj_Imprime( &swatch );
 
-   printf( "...\n" );
+    printf( "...\n" );
+
+    // simulamos que transcurrieron 82 minutos en cada reloj:
 	for( size_t i = 0; i < 82; ++i )
-   {
+    {
 		Reloj_Incrementar( &casio );
 		Reloj_Incrementar( &swatch );
 	}
